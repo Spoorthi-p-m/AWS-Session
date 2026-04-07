@@ -34,12 +34,12 @@ app.post("/create-checkout-session/:pid", async (req, res) => {
 
     const order = await razorpay.orders.create(options);
     
-    // Send the order details to the frontend
+    // Inside your server.js route
     res.json({
-      id: order.id,
-      amount: order.amount,
-      key_id: process.env.RAZORPAY_KEY_ID // Frontend needs this
-    });
+     id: order.id,                  // The order ID from Razorpay
+     amount: order.amount,          // The amount in Paise
+     key_id: process.env.RAZORPAY_KEY_ID // Your Public Key
+});
   } catch (error) {
     res.status(500).send(error);
   }
