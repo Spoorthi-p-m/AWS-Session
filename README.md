@@ -1,6 +1,6 @@
 AWS Workshop Registration & Payment System
 
-This project is a full-stack web application designed to manage workshop registrations with a secure payment gateway. Originally based on the Kunal Kushwaha/stripe-sample-code repository, this version has been significantly modified to support Razorpay and is optimized for AWS EC2 deployment.
+This project is a full-stack web application designed to manage workshop registrations with a secure payment gateway. Originally based on the Kunal Verma/stripe-sample-code repository, this version has been significantly modified to support Razorpay and is optimized for AWS EC2 deployment.
 
 🌟 Key Updates in this Fork
 
