@@ -1,36 +1,34 @@
 AWS Workshop Registration & Payment System
 
-A full-stack web application designed to manage workshop registrations with a secure payment gateway integration. This project is hosted on Amazon EC2 and uses Node.js for the backend.
-🚀 Live Demo
+This project is a full-stack web application designed to manage workshop registrations with a secure payment gateway. Originally based on the Kunal Kushwaha/stripe-sample-code repository, this version has been significantly modified to support Razorpay and is optimized for AWS EC2 deployment.
 
-Access the live application here:
-http://<YOUR_EC2_PUBLIC_IP>:3000
+🌟 Key Updates in this Fork
+
+    Payment Migration: Replaced Stripe integration with Razorpay API for localized INR transactions.
+
+    Cloud Infrastructure: Fully configured and deployed on an Amazon EC2 (Ubuntu) instance.
+
+    Environment Security: Implementation of dotenv to manage sensitive API keys on the server.
+
+    Production Ready: Set up for process management using PM2 on AWS.
 
 🛠️ Tech Stack
 
-    Cloud Hosting: Amazon Web Services (AWS) EC2
+    Hosting: Amazon Web Services (AWS) EC2
 
-    Runtime: Node.js
+    Runtime: Node.js & Express.js
 
-    Backend Framework: Express.js
+    Payments: Razorpay Checkout
 
-    Payment Gateway: Razorpay API (Test Mode)
+    Frontend: HTML5, CSS3, JavaScript
 
-    Frontend: HTML5, CSS3, JavaScript (Vanilla)
+    Tools: Git, GitHub, PM2
 
-    Version Control: Git & GitHub
+🚀 Live Deployment
 
-📦 Features
-
-    Cloud Deployment: Fully functional Ubuntu-based server on AWS.
-
-    Secure Payments: Integrated Razorpay checkout for seamless INR transactions.
-
-    Dynamic Routing: Custom Express routes for payment initialization and status handling.
-
-    Environment Safety: Uses dotenv to protect sensitive API keys.
-
-🔧 Installation & Local Setup
+The application is currently live and can be accessed via the AWS Public IP:
+http://<YOUR_EC2_PUBLIC_IP>:3000
+🔧 Installation & Setup
 
     Clone the repository:
     Bash
@@ -49,41 +47,42 @@ http://<YOUR_EC2_PUBLIC_IP>:3000
 
     RAZORPAY_KEY_ID=your_rzp_test_id
     RAZORPAY_KEY_SECRET=your_rzp_test_secret
-    PORT=3000
 
-    Start the server:
+    Run the application:
     Bash
 
     node server.js
 
-☁️ Deployment on AWS EC2
+☁️ AWS EC2 Deployment Steps
 
-    Launch an EC2 Ubuntu Instance.
+    Security Groups: Ensure Port 3000 is open in your AWS Inbound Rules.
 
-    Allow Inbound Traffic on Port 3000 via AWS Security Groups.
+    Node.js Setup: Install Node.js on your EC2 instance using NVM or APT.
 
-    Install Node.js and NPM on the instance.
-
-    Clone this repository and run npm install.
-
-    (Optional) Use PM2 to keep the server running:
+    Keep-Alive: Use PM2 to ensure the server stays online:
     Bash
 
     sudo npm install -g pm2
-    pm2 start server.js
+    pm2 start server.js --name "workshop-app"
 
-How to update this on your GitHub:
+📜 Credits
 
-    Inside your local repo, run nano README.md.
+Base project structure and frontend templates provided by Kunal Verma.
 
-    Delete the old content and paste the text above (make sure to replace <YOUR_EC2_PUBLIC_IP> with your actual AWS IP).
+How to apply this update:
 
-    Save and exit (Ctrl+O, Enter, Ctrl+X).
+    Open the file: nano README.md
 
-    Run the Git commands:
+    Clear the old text: Hold Ctrl + K until the file is empty.
+
+    Paste the new text: (Right-click to paste in the terminal).
+
+    Save & Exit: Ctrl + O, Enter, Ctrl + X.
+
+    Push to GitHub:
     Bash
 
     git add README.md
-    git commit -m "Docs: Update README with Razorpay and AWS setup"
+    git commit -m "Docs: Updated README with Kunal Kushwaha credit and AWS details"
     git push origin main
 
