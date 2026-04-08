@@ -1,72 +1,89 @@
-# Deploying a Node Js Application on AWS EC2
+AWS Workshop Registration & Payment System
 
-### Testing the project locally
+A full-stack web application designed to manage workshop registrations with a secure payment gateway integration. This project is hosted on Amazon EC2 and uses Node.js for the backend.
+🚀 Live Demo
 
-1. Clone this project
-```
-git clone https://github.com/verma-kunal/AWS-Session.git
-```
-2. Setup the following environment variables - `(.env)` file
-```
-DOMAIN= ""
-PORT=3000
-STATIC_DIR="./client"
+Access the live application here:
+http://<YOUR_EC2_PUBLIC_IP>:3000
 
-PUBLISHABLE_KEY=""
-SECRET_KEY=""
-```
-3. Initialise and start the project
-```
-npm install
-npm run start
-```
+🛠️ Tech Stack
 
-### Set up an AWS EC2 instance
+    Cloud Hosting: Amazon Web Services (AWS) EC2
 
-1. Create an IAM user & login to your AWS Console
-    - Access Type - Password
-    - Permissions - Admin
-2. Create an EC2 instance
-    - Select an OS image - Ubuntu
-    - Create a new key pair & download `.pem` file
-    - Instance type - t2.micro
-3. Connecting to the instance using ssh
-```
-ssh -i instance.pem ubunutu@<IP_ADDRESS>
-```
+    Runtime: Node.js
 
-### Configuring Ubuntu on remote VM
+    Backend Framework: Express.js
 
-1. Updating the outdated packages and dependencies
-```
-sudo apt update
-```
-3. Install Git - [Guide by DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-22-04) 
-4. Configure Node.js and `npm` - [Guide by DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-22-04)
+    Payment Gateway: Razorpay API (Test Mode)
 
-### Deploying the project on AWS
+    Frontend: HTML5, CSS3, JavaScript (Vanilla)
 
-1. Clone this project in the remote VM
-```
-git clone https://github.com/verma-kunal/AWS-Session.git
-```
-2. Setup the following environment variables - `(.env)` file
-```
-DOMAIN= ""
-PORT=3000
-STATIC_DIR="./client"
+    Version Control: Git & GitHub
 
-PUBLISHABLE_KEY=""
-SECRET_KEY=""
-```
-> For this project, we'll have to set up an [Elastic IP Address](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html) for our EC2 & that would be our `DOMAIN`
+📦 Features
 
-3. Initialise and start the project
-```
-npm install
-npm run start
-```
+    Cloud Deployment: Fully functional Ubuntu-based server on AWS.
 
-> NOTE - We will have to edit the **inbound rules** in the security group of our EC2, in order to allow traffic from our particular port
+    Secure Payments: Integrated Razorpay checkout for seamless INR transactions.
 
-### Project is deployed on AWS 🎉
+    Dynamic Routing: Custom Express routes for payment initialization and status handling.
+
+    Environment Safety: Uses dotenv to protect sensitive API keys.
+
+🔧 Installation & Local Setup
+
+    Clone the repository:
+    Bash
+
+    git clone https://github.com/YOUR_USERNAME/AWS-Session.git
+    cd AWS-Session
+
+    Install dependencies:
+    Bash
+
+    npm install
+
+    Configure Environment Variables:
+    Create a .env file in the root directory:
+    Plaintext
+
+    RAZORPAY_KEY_ID=your_rzp_test_id
+    RAZORPAY_KEY_SECRET=your_rzp_test_secret
+    PORT=3000
+
+    Start the server:
+    Bash
+
+    node server.js
+
+☁️ Deployment on AWS EC2
+
+    Launch an EC2 Ubuntu Instance.
+
+    Allow Inbound Traffic on Port 3000 via AWS Security Groups.
+
+    Install Node.js and NPM on the instance.
+
+    Clone this repository and run npm install.
+
+    (Optional) Use PM2 to keep the server running:
+    Bash
+
+    sudo npm install -g pm2
+    pm2 start server.js
+
+How to update this on your GitHub:
+
+    Inside your local repo, run nano README.md.
+
+    Delete the old content and paste the text above (make sure to replace <YOUR_EC2_PUBLIC_IP> with your actual AWS IP).
+
+    Save and exit (Ctrl+O, Enter, Ctrl+X).
+
+    Run the Git commands:
+    Bash
+
+    git add README.md
+    git commit -m "Docs: Update README with Razorpay and AWS setup"
+    git push origin main
+
